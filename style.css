@@ -364,7 +364,17 @@ section {
     /* The width will be calculated by content, but ensure enough space for duplicates */
     /* For a smoother loop, ensure the total width of the content is at least double the scroller width */
     /* This is handled by duplicating the client-logo elements in HTML */
-    animation: scroll 30s linear infinite;
+    animation: scroll 15s linear infinite;
+}
+.client-scroller {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    padding: 1.5rem 0; /* Add some vertical padding for the cards */
+    -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
 }
 
 @keyframes scroll {

@@ -76,4 +76,25 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
         });
     }
+
+    // --- Client scroller touch and hover animation control ---
+    const clientScroller = document.querySelector('.client-scroller');
+    const clientsList = document.querySelector('.clients-list');
+
+    if (clientScroller && clientsList) {
+        // Pause animation on touchstart or mouseenter
+        const pauseAnimation = () => {
+            clientsList.style.animationPlayState = 'paused';
+        };
+
+        // Resume animation on touchend or mouseleave
+        const resumeAnimation = () => {
+            clientsList.style.animationPlayState = 'running';
+        };
+
+        clientScroller.addEventListener('touchstart', pauseAnimation, { passive: true });
+        clientScroller.addEventListener('touchend', resumeAnimation, { passive: true });
+        clientScroller.addEventListener('mouseenter', pauseAnimation);
+        clientScroller.addEventListener('mouseleave', resumeAnimation);
+    }
 });
