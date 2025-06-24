@@ -375,6 +375,10 @@ section {
     padding: 1.5rem 0; /* Add some vertical padding for the cards */
     -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
     mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    scrollbar-width: none; /* Firefox */
+}
+.client-scroller::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 @keyframes scroll {
