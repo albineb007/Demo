@@ -682,3 +682,13 @@ section {
     .footer-container, .footer-bottom { flex-direction: column; text-align: center; }
     .designed-by { text-align: center; }
 }
+
+@media (max-width: 600px) {
+    .section-fancy-img {
+        max-width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+    .section-fancy-text {
+        padding: 0 1rem;
+    }
+}
