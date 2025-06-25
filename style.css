@@ -688,6 +688,80 @@ section {
         max-width: 100% !important;
         margin-bottom: 1.5rem;
     }
+/* Gallery Section Styles - For demonstration. Move to style.css */
+.gallery-grid {
+    display: grid;
+    /* This will create columns that are at least 250px wide and
+       distribute available space equally. */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    /* Ensures all rows have a consistent height */
+    grid-auto-rows: 400px;
+    gap: 1rem;
+    margin-top: 2rem;
+    /* Optional: Center the grid itself if it doesn't take full width */
+    justify-content: center;
+    align-items: center; /* Vertically center content in the grid area if needed */
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* To center the image inside the item if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    /* 'object-fit: contain' will scale the image to fit within the element's box,
+       while maintaining its aspect ratio, but it will letterbox if necessary.
+       'object-fit: cover' will fill the entire box, potentially cropping the image.
+       Choose based on whether you want to see the full image or fill the space.
+       From your image, 'cover' seems more appropriate to maintain the fill. */
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Ensure the image itself is centered within the flex container */
+    margin: auto;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.15);
+}
+
+/* REMOVE these rules to achieve uniform width */
+/* .gallery-item:nth-child(1) { grid-column: span 2; } */
+/* .gallery-item:nth-child(4) { grid-column: span 2; } */
+
+/* The media query is now likely unnecessary for uniform width if the above are removed,
+   but you can keep it if you have other responsive behaviors in mind. */
+/* @media (max-width: 820px) { .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 1; } } */
     .section-fancy-text {
         padding: 0 1rem;
     }
