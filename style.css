@@ -688,6 +688,7 @@ section {
         max-width: 100% !important;
         margin-bottom: 1.5rem;
     }
+}
 /* Gallery Section Styles - For demonstration. Move to style.css */
 .gallery-grid {
     display: grid;
@@ -762,7 +763,3 @@ section {
 /* The media query is now likely unnecessary for uniform width if the above are removed,
    but you can keep it if you have other responsive behaviors in mind. */
 /* @media (max-width: 820px) { .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 1; } } */
-    .section-fancy-text {
-        padding: 0 1rem;
-    }
-}
