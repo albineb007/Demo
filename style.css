@@ -155,7 +155,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Images/WhatsApp Image 2025-06-22 at 5.59.00 PM (1).jpeg') center/cover no-repeat;
+    background: url('Images/2.png');
     opacity: 0.18;
     z-index: 2;
     transition: transform 0.2s ease-out;
@@ -648,6 +648,16 @@ section {
     .section-fancy-text .section-title::after { margin: 16px auto 0 auto; }
 }
 
+@media (max-width: 600px) {
+    .section-fancy-img {
+        max-width: 100% !important;
+        margin-bottom: 1.5rem;
+    }
+    .section-fancy-text {
+        padding: 0 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     nav { padding: 1rem; }
     .nav-links {
@@ -681,13 +691,6 @@ section {
     section { padding: 3rem 1rem; }
     .footer-container, .footer-bottom { flex-direction: column; text-align: center; }
     .designed-by { text-align: center; }
-}
-
-@media (max-width: 600px) {
-    .section-fancy-img {
-        max-width: 100% !important;
-        margin-bottom: 1.5rem;
-    }
 }
 /* Gallery Section Styles - For demonstration. Move to style.css */
 .gallery-grid {
